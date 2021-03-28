@@ -1,0 +1,19 @@
+{
+  "apiKey": "c814e2ea-e9a8-40be-9d92-793d8967fc28",
+  "secrect": "yGCD03uGnMOUvdQOIcPVgTwYpFQSlESCCKPl9MNtpZKK8jcQj5CLVLs9TyeRztaDzTwohEWk",
+  "access_token": "",
+  "api_url": "https://api.redoxengine.com",
+  "blob_url": "https://blob.redoxengine.com",
+  "refresh_token": "",
+  "header": {
+    "User-Agent": "",
+    "Accept": "*/*",
+    "Cache-Control": "no-cache",
+    "Postman-Token": "9aed54b4-747b-40b3-9ede-810194420457",
+    "Host": "api.redoxengine.com",
+    "Content-Type": "multipart/form-data; boundary=--------------------------622747788368391630694563",
+    "Accept-Encoding": "gzip, deflate",
+    "Content-Length": 374,
+    "Connection": "keep-alive"
+  }
+}

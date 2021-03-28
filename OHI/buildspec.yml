@@ -1,0 +1,33 @@
+version: 0.2
+
+# env:
+#   variables:
+#     AWS_ACCOUNT_ID: 971183447371
+#     REPO_NAME: idn-backend
+#     IMAGE_URI: ${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com/${REPO_NAME}
+#     IMAGE_TAG: develop
+#     BUILDER_IMAGE_TAG: develop-builder
+#     CONTAINER_NAME: idn-dev-backend
+
+phases:
+  install:
+    runtime-versions:
+      docker: 18
+    commands:
+      - nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://127.0.0.1:2375 --storage-driver=overlay2&
+      - timeout 15 sh -c "until docker info; do echo .; sleep 1; done"
+  pre_build:
+    commands:
+      - $(aws ecr get-login --no-include-email --region $AWS_DEFAULT_REGION)
+  build:
+    commands:
+      - docker-compose pull || true
+      - docker-compose build
+      - docker-compose push
+  post_build:
+    commands:
+      - printf '[{"name":"%s","imageUri":"%s"}]' $CONTAINER_NAME $IMAGE_URI:$IMAGE_TAG > imagedefinitions.json
+
+artifacts:
+  files:
+    - imagedefinitions.json

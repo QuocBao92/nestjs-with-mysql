@@ -1,0 +1,32 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "declaration": true,
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "target": "es2017",
+    "sourceMap": true,
+    "outDir": "./dist",
+    "baseUrl": "./",
+    "incremental": true,
+    "composite": true,
+    "preserveConstEnums": true,
+    "resolveJsonModule": true,
+    "paths": {
+      // "@nestjsx/crud": ["src/Packages/crud/src"],
+      // "@nestjsx/crud-typeorm": ["src/Packages/crud-typeorm/src"],
+      // "@nestjsx/crud-request": ["src/Packages/crud-request/src"],
+      // "@nestjsx/util": ["src/Packages/util/src"],
+      // "@nestjsx/crud/*": ["src/Packages/crud/src/*"],
+      // "@nestjsx/crud-typeorm/*": ["src/Packages/crud-typeorm/src/*"],
+      // "@nestjsx/crud-request/*": ["src/Packages/crud-request/src/*"],
+      // "@nestjsx/util/*": ["src/Packages/util/src/*"]
+    }
+  }, 
+  "exclude": ["node_modules", "dist"],
+  "include": [
+    "**/*",
+    "**/*.json",
+  ]
+}

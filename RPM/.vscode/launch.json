@@ -1,0 +1,34 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Debug Program",
+            "preLaunchTask": "${defaultBuildTask}",
+            "program": "${workspaceFolder}\\src\\main.ts",
+            "smartStep": true,
+            "outFiles": [
+                "${workspaceFolder}/dist/**/*.js"
+            ],
+            "env": {
+                "PORT": "3000",
+                "NODE_ENV": "local",
+                "TIME_REMOVE_CACHE": "3600000",
+                "TIME_EXPIRE_CACHE": "3600000",
+                "TIME_TO_SUMMARY_CACULATE": "00 3 * * *",
+                "DB_PASSWORD":"Idn@123",
+                "DB_READ_PASSWORD":"Idn@123",
+                "DB_READ_USER":"idn-read-user",
+                "DB_USER":"idn-user",
+                "KII_PASS":"8aQT3t8Y",
+                "KII_USERNAME":"idn_stg_admin",
+                "LOGGER_ENC_KEY":"bf3c199c2470cb477d907b1e0917c17b",
+                "LOGGER_IV":"5183666c72eec9e4",
+                "REDOX_AUDIENCE":"851a2d49-a5f0-4599-af55-04298a7f3459",
+                "REDOX_ISSUER":"7ce6f387-c33c-417d-8682-81e83628cbd9",
+                "REDOX_SECRET_KEY":"c3ckoHquXyxRGVfMSS9BYKS0wHP7KVpwShylDzo53vjHmoEUiiwe0cbBtqn1jjyHlUblDMkX",
+            }
+        }
+    ]
+}

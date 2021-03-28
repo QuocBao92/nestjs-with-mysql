@@ -1,0 +1,22 @@
+version: "3.4"
+
+services:
+  builder:
+    image: ${IMAGE_URI-idn-backend}:${BUILDER_IMAGE_TAG-develop-builder}
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.builder
+      cache_from:
+        - ${IMAGE_URI-idn-backend}:${BUILDER_IMAGE_TAG-develop-builder}
+
+  webapp:
+    image: ${IMAGE_URI-idn-backend}:${IMAGE_TAG-develop}
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+      args:
+        TAG: ${BUILDER_IMAGE_TAG-develop-builder}
+        IMAGE: ${IMAGE_URI-idn-backend}
+      cache_from:
+        - ${IMAGE_URI-idn-backend}:${BUILDER_IMAGE_TAG-develop-builder}
+        - ${IMAGE_URI-idn-backend}:${IMAGE_TAG-develop}
